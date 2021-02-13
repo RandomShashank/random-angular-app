@@ -10,6 +10,9 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = 'No servers created';
   serverName = 'testServer';
   serverCreated = false;
+  text= 'Secret password is tuna';
+  showSecret = false;
+  log = [0];
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
@@ -26,5 +29,10 @@ export class ServersComponent implements OnInit {
 
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  onToggle() {
+    this.showSecret = !this.showSecret;
+    this.log.push(this.log.length + 1);
   }
 }
