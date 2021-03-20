@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   //title = 'random-Angular-app';
   username='';
+
+  loadedfeature = 'recipe';
+
+  onNavigate(feature: string) {
+    this.loadedfeature = feature;
+  }
 }
