@@ -1,8 +1,9 @@
-<!-- <label>Username</label>
-<input type="text" class="form-control" [(ngModel)]="username"> -->
-<!-- <p>{{username}}</p>
-<button class="btn btn-primary" [disabled]="username === ''" (click)="username=''">Reset</button> -->
-
-<app-servers></app-servers>
-
-<app-server></app-server>
+<app-header (featuerselected)="onNavigate($event)"></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <app-recipes *ngIf="loadedfeature==='recipe'"></app-recipes>
+            <app-shopping-list *ngIf="loadedfeature!=='recipe'"></app-shopping-list>
+        </div>
+    </div>
+</div>
